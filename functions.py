@@ -6,13 +6,15 @@ def fib(n):  # write Fibonacci series up to n
         a, b = b, a + b
     print()
 
-
-f = fib
+# f = fib
+from fibo import fib as f
 f(100)
 
 # since, the function doesn't return anything, therefore by default, it returns None
 print(f(10))
 
+# Symbol table lookup : local to the function, enclosing function, global, built-in
+# global variable can be accessed using 'global' keyword. Enclosing function variable can be accessed using 'nonlocal' keyword.
 
 # Default Argument Value function
 def ask_ok(prompt, retries=4, reminder='Please try again!'):
@@ -74,20 +76,20 @@ pos_only_arg(1)
 # keyword_only_arg(1) - not possible since it uses keyword argument
 keyword_only_arg(arg=3)
 
-"""
->>> combined_example(1, 2, 3)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: combined_example() takes 2 positional arguments but 3 were given
-"""
+# 
+# >>> combined_example(1, 2, 3)
+# Traceback (most recent call last):
+#   File "<stdin>", line 1, in <module>
+# TypeError: combined_example() takes 2 positional arguments but 3 were given
+# 
 combine(1, 2, kwd_only=3)
 
 # standard can be positional or keyword here
 combine(1, standard=2, kwd_only=3)
 
-"""
->>> combined_example(pos_only=1, standard=2, kwd_only=3)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: combined_example() got an unexpected keyword argument 'pos_only'
-"""
+# """
+# >>> combined_example(pos_only=1, standard=2, kwd_only=3)
+# Traceback (most recent call last):
+#   File "<stdin>", line 1, in <module>
+# TypeError: combined_example() got an unexpected keyword argument 'pos_only'
+# """
